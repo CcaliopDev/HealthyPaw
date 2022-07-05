@@ -41,6 +41,8 @@
 }
 
 .alimentos__contenedor img {
+  max-height: 400px;
+  width: auto;
 }
 
 .productos__perros,

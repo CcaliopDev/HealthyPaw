@@ -12,6 +12,11 @@ const calcularGato = document.getElementById('gato__calcular')
 const contenedorPerro = document.getElementById('productos__perros')
 const contenedorGato = document.getElementById('productos__gatos')
 
+const ordenPerro = document.getElementById('orden__perro')
+const filtroPerro = document.getElementById('filtrar__perros')
+const ordenGato = document.getElementById('orden__gato')
+const filtroGato = document.getElementById('filtrar__gatos')
+
 let contadorId = 0
 let comidaGatos = []
 let comidaPerros = []
@@ -141,11 +146,35 @@ calcularPerro.addEventListener('click', (e) => {
   }
 })
 
+filtroPerro.addEventListener('click', (e) => {
+  e.preventDefault()
+  let orden = ordenPerro.value
+  const filtrado = comidaPerros.sort((a, b) =>
+    orden == 'menor' ? a.precio - b.precio : b.precio - a.precio,
+  )
+  contenedorPerro.innerHTML = ''
+  filtrado.forEach((comida) => {
+    contenedorPerro.appendChild(plantillaComida(comida))
+  })
+})
+
+filtroGato.addEventListener('click', (e) => {
+  e.preventDefault()
+  let orden = ordenGato.value
+  const filtrado = comidaGatos.sort((a, b) =>
+    orden == 'menor' ? a.precio - b.precio : b.precio - a.precio,
+  )
+  contenedorGato.innerHTML = ''
+  filtrado.forEach((comida) => {
+    contenedorGato.appendChild(plantillaComida(comida))
+  })
+})
+
 const plantillaComida = (comida) => {
   let elemento = document.createElement('div')
   elemento.className = 'card col-4'
   elemento.setAttribute = ('style', 'width: 18rem')
-  elemento.innerHTML = `<img src="https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/10/Alimento-para-Gato-Frost-Cat-Indoor-7.5Kg.png" class="card-img-top" alt="..." />
+  elemento.innerHTML = `<img src="${comida.img}" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">${comida.nombre}</h5>
                             <p class="card-text">
@@ -163,55 +192,62 @@ const plantillaComida = (comida) => {
 }
 
 class Comida {
-  constructor(nombre, descripcion, precio) {
+  constructor(nombre, descripcion, precio, img) {
     this.id = contadorId++
     this.nombre = nombre
     this.descripcion = descripcion
     this.precio = precio
+    this.img = img
   }
 }
 
 comidaPerros.push(
   new Comida(
-    'Frost adultos 15kg',
-    'Racion de Frost para perros adultos de 15 kilos',
-    '2000',
+    'Dog Chow cachorro 3kg',
+    'Dog Chow cachorro Raza Pequeña 3kg',
+    '490',
+    '../img/perro_dog-chow-cachorro-raza-pequena-3kg_600.jpeg',
   ),
 )
 comidaPerros.push(
   new Comida(
-    'Frost adultos 15kg',
-    'Racion de Frost para perros adultos de 15 kilos',
-    '2000',
+    'Dogui Carne Con Cereales & Aarroz 3KG.',
+    'Alimento para perros adultos, formulado con carne , cereales y arroz.',
+    '400',
+    '../img/perro_dogui-carne-con-cereales-arroz-3kg.jpeg',
   ),
 )
 comidaPerros.push(
   new Comida(
-    'Frost adultos 15kg',
-    'Racion de Frost para perros adultos de 15 kilos',
-    '2000',
+    'Nutrique Medium Young Adult Dog 3 KG',
+    'Alimento preium para perros de raza mediana',
+    '1315',
+    '../img/perro_nutrique-medium-young-adult-dog-3-kg_600.png',
   ),
 )
 
 comidaGatos.push(
   new Comida(
-    'Frost adultos 15kg',
-    'Racion de Frost para gatos adultos de 15 kilos',
-    '2000',
+    'BALANCED ADULT EXCLUSIVE RECIPE CHICKEN AND RICE 9 KG',
+    'Fórmula de gran palatabilidad con 37% de proteína de alta calidad que refuerza la vitalidad del gato adulto.',
+    '1875',
+    '../img/gato_balanced-adult-exclusive-recipe-chicken-and-rice-9-kg.png',
   ),
 )
 comidaGatos.push(
   new Comida(
-    'Frost adultos 15kg',
-    'Racion de Frost para gatos adultos de 15 kilos',
-    '2000',
+    'Equilibrio Gatos Adultos 1.5KG',
+    'Alimento completo para gatos adultos',
+    '550',
+    '../img/gato_equilibrio-gatos-adultos-15kg.jpeg',
   ),
 )
 comidaGatos.push(
   new Comida(
-    'Frost adultos 15kg',
-    'Racion de Frost para gatos adultos de 15 kilos',
-    '2000',
+    'MAX Cat Buffet 1kg',
+    ' Con MAX CAT BUFFET POLLO & VEGETALES, tu gato estará bien nutrido, feliz y lleno de energía.',
+    '350',
+    '../img/gato_max-cat-buffet-1kg.jpeg',
   ),
 )
 

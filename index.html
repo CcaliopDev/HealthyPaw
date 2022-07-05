@@ -119,22 +119,27 @@
             id="alimentos__perros"
           >
             <h3>Perros</h3>
-            <div class="productos__perros row" id="productos__perros">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
+            <form action="">
+              <label for="orden__perro"></label>
+              <select id="orden__perro" name="orden__perro">
+                <option value="menor">De menor a mayor</option>
+                <option value="mayor">De Mayor a menor</option>
+              </select>
+              <input type="submit" value="filtrar" id="filtrar__perros" />
+            </form>
+
+            <div class="productos__perros row" id="productos__perros"></div>
           </article>
           <article class="cardContainer alimentos__gatos" id="alimentos__gatos">
             <h3>Gatos</h3>
+            <form action="">
+              <label for="orden__gato"></label>
+              <select id="orden__gato" name="orden__gato">
+                <option value="menor">De menor a mayor</option>
+                <option value="mayor">De Mayor a menor</option>
+              </select>
+              <input type="submit" value="filtrar" id="filtrar__gatos" />
+            </form>
             <div class="productos__gatos row" id="productos__gatos">
               <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="..." />
