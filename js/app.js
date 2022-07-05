@@ -174,7 +174,7 @@ const plantillaComida = (comida) => {
   let elemento = document.createElement('div')
   elemento.className = 'card col-4'
   elemento.setAttribute = ('style', 'width: 18rem')
-  elemento.innerHTML = `<img src="${comida.img}" class="card-img-top" alt="..." />
+  elemento.innerHTML = `<img src="https://www.turacion.com/content/images/thumbs/0013301_balanced-adult-exclusive-recipe-chicken-and-rice-9-kg.png" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">${comida.nombre}</h5>
                             <p class="card-text">
