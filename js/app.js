@@ -174,7 +174,7 @@ const plantillaComida = (comida) => {
   let elemento = document.createElement('div')
   elemento.className = 'card col-4'
   elemento.setAttribute = ('style', 'width: 18rem')
-  elemento.innerHTML = `<img src="https://www.turacion.com/content/images/thumbs/0013301_balanced-adult-exclusive-recipe-chicken-and-rice-9-kg.png" class="card-img-top" alt="..." />
+  elemento.innerHTML = `<img src="${comida.img}" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">${comida.nombre}</h5>
                             <p class="card-text">
@@ -206,7 +206,7 @@ comidaPerros.push(
     'Dog Chow cachorro 3kg',
     'Dog Chow cachorro Raza Pequeña 3kg',
     '490',
-    '../img/perro_dog-chow-cachorro-raza-pequena-3kg_600.jpeg',
+    'https://ccaliopdev.github.io/HealthyPaw/img/perro_dog-chow-cachorro-raza-pequena-3kg_600.jpeg',
   ),
 )
 comidaPerros.push(
@@ -214,7 +214,7 @@ comidaPerros.push(
     'Dogui Carne Con Cereales & Aarroz 3KG.',
     'Alimento para perros adultos, formulado con carne , cereales y arroz.',
     '400',
-    '../img/perro_dogui-carne-con-cereales-arroz-3kg.jpeg',
+    'https://ccaliopdev.github.io/HealthyPaw/img/perro_dogui-carne-con-cereales-arroz-3kg.jpeg',
   ),
 )
 comidaPerros.push(
@@ -222,7 +222,7 @@ comidaPerros.push(
     'Nutrique Medium Young Adult Dog 3 KG',
     'Alimento preium para perros de raza mediana',
     '1315',
-    '../img/perro_nutrique-medium-young-adult-dog-3-kg_600.png',
+    'https://ccaliopdev.github.io/HealthyPaw/img/perro_nutrique-medium-young-adult-dog-3-kg_600.png',
   ),
 )
 
@@ -231,7 +231,7 @@ comidaGatos.push(
     'BALANCED ADULT EXCLUSIVE RECIPE CHICKEN AND RICE 9 KG',
     'Fórmula de gran palatabilidad con 37% de proteína de alta calidad que refuerza la vitalidad del gato adulto.',
     '1875',
-    '../img/gato_balanced-adult-exclusive-recipe-chicken-and-rice-9-kg.png',
+    'https://ccaliopdev.github.io/HealthyPaw/img/gato_balanced-adult-exclusive-recipe-chicken-and-rice-9-kg.png',
   ),
 )
 comidaGatos.push(
@@ -239,7 +239,7 @@ comidaGatos.push(
     'Equilibrio Gatos Adultos 1.5KG',
     'Alimento completo para gatos adultos',
     '550',
-    '../img/gato_equilibrio-gatos-adultos-15kg.jpeg',
+    'https://ccaliopdev.github.io/HealthyPaw/img/gato_equilibrio-gatos-adultos-15kg.jpeg',
   ),
 )
 comidaGatos.push(
@@ -247,7 +247,7 @@ comidaGatos.push(
     'MAX Cat Buffet 1kg',
     ' Con MAX CAT BUFFET POLLO & VEGETALES, tu gato estará bien nutrido, feliz y lleno de energía.',
     '350',
-    '../img/gato_max-cat-buffet-1kg.jpeg',
+    'https://ccaliopdev.github.io/HealthyPaw/img/gato_max-cat-buffet-1kg.jpeg',
   ),
 )
 
