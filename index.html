@@ -31,16 +31,15 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!-- <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li> -->
               <li class="nav-item">
-                <a class="nav-link active" href="#">Calculadora de Alimento</a>
+                <a class="nav-link active" href="#calculadora">
+                  Calculadora de Alimento
+                </a>
               </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link active dropdown-toggle"
-                  href="#"
+                  href="#alimentos"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -49,9 +48,12 @@
                   Alimento
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Perro</a></li>
-                  <li><a class="dropdown-item" href="#">Gato</a></li>
-                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#alimentos__perros">Perro</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#alimentos__perros">Gato</a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -61,8 +63,13 @@
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                id="search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button
+                class="btn btn-outline-success"
+                type="submit"
+                id="searchButton"
+              >
                 Search
               </button>
             </form>
@@ -111,6 +118,12 @@
         </div>
       </section>
       <!-- Catalogo de productos -->
+      <section class="productosBuscados">
+        <article class="buscados cardContainer hidden" id="buscados">
+          <h3>buscados</h3>
+          <div class="buscadosContenido row" id="buscadosContenido"></div>
+        </article>
+      </section>
       <section class="alimentos" id="alimentos">
         <h2>Productos</h2>
         <div class="alimentos__contenedor">

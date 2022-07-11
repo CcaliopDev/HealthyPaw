@@ -28,11 +28,13 @@
   align-items: center;
 }
 
-.alimentos {
+.alimentos,
+.productosBuscados {
   text-align: center;
 }
 
-.alimentos__contenedor {
+.alimentos__contenedor,
+.productosBuscados {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -46,8 +48,13 @@
 }
 
 .productos__perros,
-.productos__gatos {
+.productos__gatos,
+.buscadosContenido {
   width: 80vw;
+}
+
+.hidden {
+  display: none;
 }
 
 footer {

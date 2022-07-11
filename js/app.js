@@ -17,9 +17,16 @@ const filtroPerro = document.getElementById('filtrar__perros')
 const ordenGato = document.getElementById('orden__gato')
 const filtroGato = document.getElementById('filtrar__gatos')
 
+const searchField = document.querySelector('#search')
+const searchButton = document.querySelector('#searchButton')
+const buscadoContenedor = document.getElementById('buscadosContenido')
+const buscadosArticle = document.getElementById('buscados')
+
 let contadorId = 0
+let comidas = []
 let comidaGatos = []
 let comidaPerros = []
+let busqueda = []
 
 calcularGato.addEventListener('click', (e) => {
   e.preventDefault()
@@ -170,10 +177,31 @@ filtroGato.addEventListener('click', (e) => {
   })
 })
 
+searchButton.addEventListener('click', (e) => {
+  e.preventDefault()
+  const name = searchField.value
+  busqueda = []
+  comidas.forEach((e) => {
+    if (e.nombre.toLowerCase().includes(name.toLowerCase()) && name != '') {
+      busqueda.push(e)
+    }
+  })
+  buscadoContenedor.innerHTML = ''
+  buscadosArticle.classList.remove('hidden')
+  if (busqueda.length >= 1) {
+    busqueda.forEach((e) => {
+      buscadoContenedor.appendChild(plantillaComida(e))
+    })
+  } else {
+    buscadoContenedor.innerText = 'No existe'
+  }
+  location.hash = '#' + 'buscados'
+})
+
 const plantillaComida = (comida) => {
   let elemento = document.createElement('div')
   elemento.className = 'card col-4'
-  elemento.setAttribute = ('style', 'width: 18rem')
+  elemento.setAttribute('id', `${comida.id}`)
   elemento.innerHTML = `<img src="${comida.img}" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">${comida.nombre}</h5>
@@ -251,14 +279,14 @@ comidaGatos.push(
   ),
 )
 
+comidas = comidaGatos.concat(comidaPerros)
+
 contenedorPerro.innerHTML = ''
 comidaPerros.forEach((comida) => {
-  console.log(comida)
   contenedorPerro.appendChild(plantillaComida(comida))
 })
 
 contenedorGato.innerHTML = ''
 comidaGatos.forEach((comida) => {
-  console.log(comida)
   contenedorGato.appendChild(plantillaComida(comida))
 })
