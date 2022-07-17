@@ -22,11 +22,16 @@ const searchButton = document.querySelector('#searchButton')
 const buscadoContenedor = document.getElementById('buscadosContenido')
 const buscadosArticle = document.getElementById('buscados')
 
+const carritoContenedor = document.getElementById('carrito__contenedor')
+const mainTag = document.getElementById('main')
+
 let contadorId = 0
 let comidas = []
 let comidaGatos = []
 let comidaPerros = []
 let busqueda = []
+let carrito = []
+carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 calcularGato.addEventListener('click', (e) => {
   e.preventDefault()
@@ -198,6 +203,45 @@ searchButton.addEventListener('click', (e) => {
   location.hash = '#' + 'buscados'
 })
 
+mainTag.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  if (
+    event.target &&
+    event.target.tagName === 'A' &&
+    event.target.classList.contains('card__link')
+  ) {
+    const element = event.target.getAttribute('data-id')
+    if (!carrito.find((el) => el.id == element)) {
+      console.log(element)
+      carrito.push(comidas.find((el) => el.id == element))
+      localStorage.setItem('carrito', JSON.stringify(carrito))
+      carritoContenedor.innerHTML = ''
+      for (const prop of carrito) {
+        carritoContenedor.appendChild(plantillaCarrito(prop))
+      }
+    }
+  }
+})
+
+carritoContenedor.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  if (
+    event.target &&
+    event.target.tagName === 'A' &&
+    event.target.classList.contains('carrito__link')
+  ) {
+    const element = event.target.getAttribute('data-id')
+    carrito = carrito.filter((e) => e.id != element)
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    carritoContenedor.innerHTML = ''
+    for (const prop of carrito) {
+      carritoContenedor.appendChild(plantillaCarrito(prop))
+    }
+  }
+})
+
 const plantillaComida = (comida) => {
   let elemento = document.createElement('div')
   elemento.className = 'card col-4'
@@ -211,8 +255,29 @@ const plantillaComida = (comida) => {
                             <p class="card-text">
                                 $${comida.precio}
                             </p>
-                            <a href="#" class="btn btn-primary">
+                            <a href="#" data-id=${comida.id} class="card__link btn btn-primary">
                             Añadir al carrito
+                            </a>
+                        </div>
+                        `
+  return elemento
+}
+
+const plantillaCarrito = (comida) => {
+  let elemento = document.createElement('div')
+  elemento.className = 'card col-4'
+  elemento.setAttribute('id', `${comida.id}`)
+  elemento.innerHTML = `<img src="${comida.img}" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">${comida.nombre}</h5>
+                            <p class="card-text">
+                                ${comida.descripcion}
+                            </p>
+                            <p class="card-text">
+                                $${comida.precio}
+                            </p>
+                            <a href="#" data-id=${comida.id} class="carrito__link btn btn-primary">
+                            Eliminar
                             </a>
                         </div>
                         `
@@ -289,4 +354,9 @@ comidaPerros.forEach((comida) => {
 contenedorGato.innerHTML = ''
 comidaGatos.forEach((comida) => {
   contenedorGato.appendChild(plantillaComida(comida))
+})
+
+carritoContenedor.innerHTML = ''
+carrito.forEach((comida) => {
+  carritoContenedor.appendChild(plantillaCarrito(comida))
 })

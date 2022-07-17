@@ -1,4 +1,14 @@
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar a svg {
+  margin-left: 1rem;
+}
+
 .hero {
+  margin-top: 4rem;
   text-align: center;
 }
 
@@ -34,7 +44,8 @@
 }
 
 .alimentos__contenedor,
-.productosBuscados {
+.productosBuscados,
+.carrito {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -42,15 +53,22 @@
   gap: 2rem;
 }
 
-.alimentos__contenedor img {
+.alimentos__contenedor img,
+.productosBuscados img,
+.carrito__contenedor img {
   max-height: 400px;
   width: auto;
 }
 
 .productos__perros,
 .productos__gatos,
-.buscadosContenido {
+.buscadosContenido,
+.carrito__contenedor {
   width: 80vw;
+}
+
+.row div {
+  margin-bottom: 1rem;
 }
 
 .hidden {
@@ -60,4 +78,10 @@
 footer {
   margin-top: 2rem;
   height: 50px;
+}
+
+.carrito {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
 }
