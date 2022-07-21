@@ -242,20 +242,20 @@ carritoContenedor.addEventListener('click', (event) => {
   }
 })
 
-const plantillaComida = (comida) => {
+const plantillaComida = ({ id, img, nombre, descripcion, precio }) => {
   let elemento = document.createElement('div')
   elemento.className = 'card col-4'
-  elemento.setAttribute('id', `${comida.id}`)
-  elemento.innerHTML = `<img src="${comida.img}" class="card-img-top" alt="..." />
+  elemento.setAttribute('id', `${id}`)
+  elemento.innerHTML = `<img src="${img}" class="card-img-top" alt="..." />
                         <div class="card-body">
-                            <h5 class="card-title">${comida.nombre}</h5>
+                            <h5 class="card-title">${nombre}</h5>
                             <p class="card-text">
-                                ${comida.descripcion}
+                                ${descripcion}
                             </p>
                             <p class="card-text">
-                                $${comida.precio}
+                                $${precio}
                             </p>
-                            <a href="#" data-id=${comida.id} class="card__link btn btn-primary">
+                            <a href="#" data-id=${id} class="card__link btn btn-primary">
                             Añadir al carrito
                             </a>
                         </div>
@@ -263,20 +263,20 @@ const plantillaComida = (comida) => {
   return elemento
 }
 
-const plantillaCarrito = (comida) => {
+const plantillaCarrito = ({ id, img, nombre, descripcion, precio }) => {
   let elemento = document.createElement('div')
   elemento.className = 'card col-4'
-  elemento.setAttribute('id', `${comida.id}`)
-  elemento.innerHTML = `<img src="${comida.img}" class="card-img-top" alt="..." />
+  elemento.setAttribute('id', `${id}`)
+  elemento.innerHTML = `<img src="${img}" class="card-img-top" alt="..." />
                         <div class="card-body">
-                            <h5 class="card-title">${comida.nombre}</h5>
+                            <h5 class="card-title">${nombre}</h5>
                             <p class="card-text">
-                                ${comida.descripcion}
+                                ${descripcion}
                             </p>
                             <p class="card-text">
-                                $${comida.precio}
+                                $${precio}
                             </p>
-                            <a href="#" data-id=${comida.id} class="carrito__link btn btn-primary">
+                            <a href="#" data-id=${id} class="carrito__link btn btn-primary">
                             Eliminar
                             </a>
                         </div>
@@ -344,7 +344,8 @@ comidaGatos.push(
   ),
 )
 
-comidas = comidaGatos.concat(comidaPerros)
+comidas = [...comidaGatos, ...comidaPerros]
+console.log(comidas)
 
 contenedorPerro.innerHTML = ''
 comidaPerros.forEach((comida) => {
