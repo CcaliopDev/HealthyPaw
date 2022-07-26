@@ -35,128 +35,147 @@ carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 calcularGato.addEventListener('click', (e) => {
   e.preventDefault()
+  const mensaje = funcionGato()
+  Swal.fire({
+    title: mensaje,
+    width: 600,
+    padding: '3em',
+    color: '#716add',
+    background: '#fff url(/images/trees.png)',
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("https://sweetalert2.github.io/images/nyan-cat.gif")
+      left top
+      no-repeat
+    `,
+  })
+})
+
+const funcionGato = () => {
   let nombre = nombreGato.value
   let tipo = tipoGato.value
   let peso = pesoGato.value
   let edad = edadGato.value
-
+  let mensaje = ''
   let pesoKilos = peso / 1000
 
   if (edad < 6) {
-    alert(
+    mensaje =
       nombre +
-        ` Necesita una racion de ${parseInt(pesoKilos * 0.1 * 1000)} gr/dia`,
-    )
+      ` Necesita una racion de ${parseInt(pesoKilos * 0.1 * 1000)} gr/dia`
   } else {
     switch (tipo) {
       case 'casero':
-        alert(
-          nombre + ` Necesita una racion de ${pesoKilos * 0.03 * 1000} gr/dia`,
-        )
+        mensaje =
+          nombre + ` Necesita una racion de ${pesoKilos * 0.03 * 1000} gr/dia`
 
         break
       case 'explorador':
-        alert(
-          nombre + ` Necesita una racion de ${pesoKilos * 0.06 * 1000} gr/dia`,
-        )
+        mensaje =
+          nombre + ` Necesita una racion de ${pesoKilos * 0.06 * 1000} gr/dia`
 
         break
 
       default:
-        alert(nombre + ' Tipo ingresado incorrecto')
+        mensaje = nombre + ' Tipo ingresado incorrecto'
         break
     }
   }
-})
+  return mensaje
+}
 
 calcularPerro.addEventListener('click', (e) => {
   e.preventDefault()
+  const mensaje = funcionPerro()
+  Swal.fire({
+    title: mensaje,
+    width: 600,
+    padding: '3em',
+    color: '#716add',
+    background: '#fff url(/images/trees.png)',
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("https://sweetalert2.github.io/images/nyan-cat.gif")
+      left top
+      no-repeat
+    `,
+  })
+})
+
+const funcionPerro = () => {
   let nombre = nombrePerro.value
   let peso = pesoPerro.value
   let edad = edadPerro.value
+  let mensaje = ''
   if (peso <= 1200) {
     if (edad <= 3) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 25 a 240 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 25 a 240 gr de racion de cachorro por dia'
     } else if (edad <= 5) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 40 a 280 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 40 a 280 gr de racion de cachorro por dia'
     } else if (edad <= 8) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 45 a 290 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 45 a 290 gr de racion de cachorro por dia'
     } else if (edad <= 12) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 40 a 130 gr de racion de adulto por dia',
-      )
+        ' Necesita una racion de entre 40 a 130 gr de racion de adulto por dia'
     } else {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 100 a 180 gr de racion de adulto por dia',
-      )
+        ' Necesita una racion de entre 100 a 180 gr de racion de adulto por dia'
     }
   } else if (peso <= 4500) {
     if (edad <= 3) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 130 a 590 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 130 a 590 gr de racion de cachorro por dia'
     } else if (edad <= 5) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 240 a 760 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 240 a 760 gr de racion de cachorro por dia'
     } else if (edad <= 8) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 280 a 840 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 280 a 840 gr de racion de cachorro por dia'
     } else if (edad <= 12) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 290 a 700 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 290 a 700 gr de racion de cachorro por dia'
     } else {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 320 a 500 gr de racion de adulto por dia',
-      )
+        ' Necesita una racion de entre 320 a 500 gr de racion de adulto por dia'
     }
   } else {
     if (edad <= 3) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 280 a 700 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 280 a 700 gr de racion de cachorro por dia'
     } else if (edad <= 5) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 590 a 1020 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 590 a 1020 gr de racion de cachorro por dia'
     } else if (edad <= 8) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 760 a 1100 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 760 a 1100 gr de racion de cachorro por dia'
     } else if (edad <= 12) {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 840 a 1100 gr de racion de cachorro por dia',
-      )
+        ' Necesita una racion de entre 840 a 1100 gr de racion de cachorro por dia'
     } else {
-      alert(
+      mensaje =
         nombre +
-          ' Necesita una racion de entre 500 a 700 gr de racion de adulto por dia',
-      )
+        ' Necesita una racion de entre 500 a 700 gr de racion de adulto por dia'
     }
   }
-})
+  return mensaje
+}
 
 filtroPerro.addEventListener('click', (e) => {
   e.preventDefault()
@@ -220,6 +239,35 @@ mainTag.addEventListener('click', (event) => {
       for (const prop of carrito) {
         carritoContenedor.appendChild(plantillaCarrito(prop))
       }
+      Toastify({
+        text: 'Articulo añadido al carrito',
+        duration: 3000,
+        destination: 'https://github.com/apvarun/toastify-js',
+        newWindow: true,
+        close: true,
+        gravity: 'bottom', // `top` or `bottom`
+        position: 'right', // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: 'linear-gradient(to right, #00b09b, #96c93d)',
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast()
+    } else {
+      Toastify({
+        text: 'Articulo ya esta en el carrito',
+        duration: 3000,
+        destination: 'https://github.com/apvarun/toastify-js',
+        newWindow: true,
+        close: true,
+        gravity: 'bottom', // `top` or `bottom`
+        position: 'right', // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: 'linear-gradient(to right, #00b09b, #96c93d)',
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast()
     }
   }
 })
@@ -239,6 +287,20 @@ carritoContenedor.addEventListener('click', (event) => {
     for (const prop of carrito) {
       carritoContenedor.appendChild(plantillaCarrito(prop))
     }
+    Toastify({
+      text: 'Articulo eliminado del carrito',
+      duration: 3000,
+      destination: 'https://github.com/apvarun/toastify-js',
+      newWindow: true,
+      close: true,
+      gravity: 'bottom', // `top` or `bottom`
+      position: 'right', // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: 'linear-gradient(to right, #00b09b, #96c93d)',
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast()
   }
 })
 

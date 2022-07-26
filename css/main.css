@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Mochiy+Pop+One&family=Nanum+Pen+Script&display=swap');
+
 .navbar a {
   text-decoration: none;
   color: black;
@@ -10,10 +12,20 @@
 .hero {
   margin-top: 4rem;
   text-align: center;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.titulo__principal {
+  font-size: 4rem;
+  margin-top: 8rem;
 }
 
 .calculadora {
   text-align: center;
+}
+
+.titulo__calculadora {
+  margin-top: 10rem;
 }
 
 .calculadora__contenedor {
