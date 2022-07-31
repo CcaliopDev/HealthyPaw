@@ -356,70 +356,27 @@ class Comida {
   }
 }
 
-comidaPerros.push(
-  new Comida(
-    'Dog Chow cachorro 3kg',
-    'Dog Chow cachorro Raza Pequeña 3kg',
-    '490',
-    'https://ccaliopdev.github.io/HealthyPaw/img/perro_dog-chow-cachorro-raza-pequena-3kg_600.jpeg',
-  ),
-)
-comidaPerros.push(
-  new Comida(
-    'Dogui Carne Con Cereales & Aarroz 3KG.',
-    'Alimento para perros adultos, formulado con carne , cereales y arroz.',
-    '400',
-    'https://ccaliopdev.github.io/HealthyPaw/img/perro_dogui-carne-con-cereales-arroz-3kg.jpeg',
-  ),
-)
-comidaPerros.push(
-  new Comida(
-    'Nutrique Medium Young Adult Dog 3 KG',
-    'Alimento preium para perros de raza mediana',
-    '1315',
-    'https://ccaliopdev.github.io/HealthyPaw/img/perro_nutrique-medium-young-adult-dog-3-kg_600.png',
-  ),
-)
+const traerDatos = async () => {
+  const response = await fetch('./data/data.json')
+  const data = await response.json()
+  comidas = data
+  comidaPerros = comidas.filter((comida) => comida.tipo === 'perro')
+  comidaGatos = comidas.filter((comida) => comida.tipo === 'gato')
 
-comidaGatos.push(
-  new Comida(
-    'BALANCED ADULT EXCLUSIVE RECIPE CHICKEN AND RICE 9 KG',
-    'Fórmula de gran palatabilidad con 37% de proteína de alta calidad que refuerza la vitalidad del gato adulto.',
-    '1875',
-    'https://ccaliopdev.github.io/HealthyPaw/img/gato_balanced-adult-exclusive-recipe-chicken-and-rice-9-kg.png',
-  ),
-)
-comidaGatos.push(
-  new Comida(
-    'Equilibrio Gatos Adultos 1.5KG',
-    'Alimento completo para gatos adultos',
-    '550',
-    'https://ccaliopdev.github.io/HealthyPaw/img/gato_equilibrio-gatos-adultos-15kg.jpeg',
-  ),
-)
-comidaGatos.push(
-  new Comida(
-    'MAX Cat Buffet 1kg',
-    ' Con MAX CAT BUFFET POLLO & VEGETALES, tu gato estará bien nutrido, feliz y lleno de energía.',
-    '350',
-    'https://ccaliopdev.github.io/HealthyPaw/img/gato_max-cat-buffet-1kg.jpeg',
-  ),
-)
+  contenedorPerro.innerHTML = ''
+  comidaPerros.forEach((comida) => {
+    contenedorPerro.appendChild(plantillaComida(comida))
+  })
 
-comidas = [...comidaGatos, ...comidaPerros]
-console.log(comidas)
-
-contenedorPerro.innerHTML = ''
-comidaPerros.forEach((comida) => {
-  contenedorPerro.appendChild(plantillaComida(comida))
-})
-
-contenedorGato.innerHTML = ''
-comidaGatos.forEach((comida) => {
-  contenedorGato.appendChild(plantillaComida(comida))
-})
+  contenedorGato.innerHTML = ''
+  comidaGatos.forEach((comida) => {
+    contenedorGato.appendChild(plantillaComida(comida))
+  })
+}
 
 carritoContenedor.innerHTML = ''
 carrito.forEach((comida) => {
   carritoContenedor.appendChild(plantillaCarrito(comida))
 })
+
+traerDatos()
