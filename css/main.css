@@ -9,23 +9,42 @@
   margin-left: 1rem;
 }
 
-.hero {
-  margin-top: 4rem;
-  text-align: center;
-  font-family: 'Mochiy Pop One', sans-serif;
+#main {
+  background-image: url('../img/background-main.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.titulo__principal {
-  font-size: 4rem;
-  margin-top: 8rem;
+.hero {
+  height: 100vh;
+  background-image: url('../img/background-hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculadora {
   text-align: center;
+  background-color: #ad9a8a40;
+  font-weight: bolder;
+  width: 65%;
+  position: static;
+  backdrop-filter: blur(36px);
 }
 
 .titulo__calculadora {
-  margin-top: 10rem;
+  margin-top: 5rem;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
 
 .calculadora__contenedor {
@@ -53,6 +72,25 @@
 .alimentos,
 .productosBuscados {
   text-align: center;
+  background-color: #ad9a8a40;
+  font-weight: bolder;
+  width: 90%;
+  position: static;
+  backdrop-filter: blur(36px);
+  margin-top: 2rem;
+}
+
+.alimentos h2 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 3em;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.titulo__alimentos h3 {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 3em;
+  margin-bottom: 2rem;
 }
 
 .alimentos__contenedor,
@@ -70,13 +108,25 @@
 .carrito__contenedor img {
   max-height: 400px;
   width: auto;
+  object-fit: cover;
 }
 
 .productos__perros,
 .productos__gatos,
 .buscadosContenido,
 .carrito__contenedor {
-  width: 80vw;
+  width: 70vw;
+}
+
+.filtro__alimentos {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: center;
 }
 
 .row div {
@@ -87,13 +137,48 @@
   display: none;
 }
 
-footer {
-  margin-top: 2rem;
-  height: 50px;
+.card {
+  border-radius: 2px;
+  background: #d8eceb;
+  backdrop-filter: blur(46px);
+  box-shadow: 0 6px 10px black, 0 0 6px black;
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+  margin: 1rem;
+}
+.card-title {
+  font-size: 1.8em;
+}
+.card:hover,
+.premium:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 .carrito {
   text-align: center;
   margin-top: 2rem;
   padding: 1rem;
+}
+
+.carrito h2 {
+  font-family: 'Edu SA Beginner', cursive;
+  font-weight: bolder;
+  font-size: 3.5em;
+}
+
+.carrito__contenedor {
+  flex-wrap: wrap !important;
+}
+
+.buscados h3 {
+  font-family: 'Mochiy Pop One', sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.buscadosContenido {
+  flex-wrap: wrap !important;
 }

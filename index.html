@@ -97,103 +97,102 @@
       </nav>
     </header>
     <main id="main">
-      <section class="hero" id="hero">
-        <h1 class="titulo__principal">Healthy Paw</h1>
-      </section>
+      <section class="hero" id="hero"></section>
       <!-- Calculadora de alimentos -->
-      <section class="calculadora" id="calculadora">
-        <h2 class="titulo__calculadora">Calculadora de alimentos</h2>
-        <div class="calculadora__contenedor">
-          <article class="calculadora__perros" id=" calculadora__perros">
-            <h3>Perros</h3>
-            <form action="">
-              <label for="perro__nombre">Nombre</label>
-              <input type="text" name="perro__nombre" id="perro__nombre" />
+      <div class="contenido">
+        <section class="calculadora" id="calculadora">
+          <h2 class="titulo__calculadora">Calculadora de alimentos</h2>
+          <div class="calculadora__contenedor">
+            <article class="calculadora__perros" id=" calculadora__perros">
+              <h3>Perros</h3>
+              <form action="">
+                <label for="perro__nombre">Nombre</label>
+                <input type="text" name="perro__nombre" id="perro__nombre" />
 
-              <label for="perro__peso">Peso</label>
-              <input type="number" name="perro__peso" id="perro__peso" />
-              <label for="perro__edad">Edad</label>
-              <input type="number" name="perro__edad" id="perro__edad" />
-              <input type="submit" value="Calcular" id="perro__calcular" />
-            </form>
-          </article>
-          <article class="calculadora__gatos" id=" calculadora__gatos">
-            <h3>Gatos</h3>
-            <form action="">
-              <label for="gato__nombre">Nombre</label>
-              <input type="text" name="gato__nombre" id="gato__nombre" />
-              <label for="gato__tipo">Tipo</label>
-              <select id="gato__tipo" name="gato__tipo">
-                <option value="explorador">Explorador</option>
-                <option value="casero">Casero</option>
-              </select>
-              <label for="gato__peso">Peso</label>
-              <input type="number" name="gato__peso" id="gato__peso" />
-              <label for="gato__edad">Edad</label>
-              <input type="number" name="gato__edad" id="gato__edad" />
-              <input type="submit" value="Calcular" id="gato__calcular" />
-            </form>
-          </article>
-        </div>
-      </section>
+                <label for="perro__peso">Peso en gr</label>
+                <input type="number" name="perro__peso" id="perro__peso" />
+                <label for="perro__edad">Edad en meses</label>
+                <input type="number" name="perro__edad" id="perro__edad" />
+                <input type="submit" value="Calcular" id="perro__calcular" />
+              </form>
+            </article>
+            <article class="calculadora__gatos" id=" calculadora__gatos">
+              <h3>Gatos</h3>
+              <form action="">
+                <label for="gato__nombre">Nombre</label>
+                <input type="text" name="gato__nombre" id="gato__nombre" />
+                <label for="gato__tipo">Tipo</label>
+                <select id="gato__tipo" name="gato__tipo">
+                  <option value="explorador">Explorador</option>
+                  <option value="casero">Casero</option>
+                </select>
+                <label for="gato__peso">Peso en gr</label>
+                <input type="number" name="gato__peso" id="gato__peso" />
+                <label for="gato__edad">Edad en meses</label>
+                <input type="number" name="gato__edad" id="gato__edad" />
+                <input type="submit" value="Calcular" id="gato__calcular" />
+              </form>
+            </article>
+          </div>
+        </section>
+      </div>
       <!-- Catalogo de productos -->
-      <section class="productosBuscados">
-        <article class="buscados cardContainer hidden" id="buscados">
-          <h3>Buscados</h3>
-          <div class="buscadosContenido row" id="buscadosContenido"></div>
-        </article>
-      </section>
-      <section class="alimentos" id="alimentos">
-        <h2>Productos</h2>
-        <div class="alimentos__contenedor">
-          <article
-            class="cardContainer alimentos__perros"
-            id="alimentos__perros"
-          >
-            <h3>Perros</h3>
-            <form action="">
-              <label for="orden__perro"></label>
-              <select id="orden__perro" name="orden__perro">
-                <option value="menor">De menor a mayor</option>
-                <option value="mayor">De Mayor a menor</option>
-              </select>
-              <input type="submit" value="filtrar" id="filtrar__perros" />
-            </form>
+      <div class="contenido">
+        <section class="productosBuscados">
+          <article class="buscados cardContainer hidden" id="buscados">
+            <h3>Buscados</h3>
+            <div class="buscadosContenido row" id="buscadosContenido"></div>
+          </article>
+        </section>
+      </div>
 
-            <div class="productos__perros row" id="productos__perros"></div>
-          </article>
-          <article class="cardContainer alimentos__gatos" id="alimentos__gatos">
-            <h3>Gatos</h3>
-            <form action="">
-              <label for="orden__gato"></label>
-              <select id="orden__gato" name="orden__gato">
-                <option value="menor">De menor a mayor</option>
-                <option value="mayor">De Mayor a menor</option>
-              </select>
-              <input type="submit" value="filtrar" id="filtrar__gatos" />
-            </form>
-            <div class="productos__gatos row" id="productos__gatos">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+      <div class="contenido">
+        <section class="alimentos" id="alimentos">
+          <h2>Productos</h2>
+          <div class="alimentos__contenedor">
+            <article
+              class="cardContainer alimentos__perros titulo__alimentos"
+              id="alimentos__perros"
+            >
+              <h3>Perros</h3>
+              <div class="filtro__alimentos">
+                <form action="">
+                  <label for="orden__perro"></label>
+                  <select id="orden__perro" name="orden__perro">
+                    <option value="menor">Precio de menor a mayor</option>
+                    <option value="mayor">Precio de mayor a menor</option>
+                  </select>
+                  <input type="submit" value="filtrar" id="filtrar__perros" />
+                </form>
               </div>
-            </div>
-          </article>
-        </div>
-      </section>
+
+              <div class="productos__perros row" id="productos__perros"></div>
+            </article>
+            <article
+              class="cardContainer alimentos__gatos titulo__alimentos"
+              id="alimentos__gatos"
+            >
+              <h3>Gatos</h3>
+              <div class="filtro__alimentos">
+                <form action="">
+                  <label for="orden__gato"></label>
+                  <select id="orden__gato" name="orden__gato">
+                    <option value="menor">Precio de menor a mayor</option>
+                    <option value="mayor">Precio de mayor a menor</option>
+                  </select>
+                  <input type="submit" value="filtrar" id="filtrar__gatos" />
+                </form>
+              </div>
+              <div class="productos__gatos row" id="productos__gatos"></div>
+            </article>
+          </div>
+        </section>
+      </div>
       <section class="carrito" id="carrito">
         <h2>Carrito</h2>
         <div class="carrito__contenedor row" id="carrito__contenedor"></div>
       </section>
     </main>
-    <footer></footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
